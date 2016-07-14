@@ -1,0 +1,791 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+
+    <title> Beyond Corporation (I) Pvt Ltd </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.smooth-scroll.js"></script>
+    <script src="js/jquery.ba-bbq.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.tiles.min.js"></script>
+    <script src="js/custom.jquery.js"></script>
+    <script src="js/custom.javascript.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <link rel="stylesheet" href="css/jquery.tiles.min.css"/>
+    <link rel="stylesheet" href="css/styles.css" media="screen"/>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="icon" href="images/Logo-icon.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript">
+          function reloadPage()
+          {
+              $(".contact-msg").hide();window.location.href="/";
+          }
+
+          function sendMail(e){
+              
+                            
+              var nameErr = document.getElementById("nameErr");
+              var emailErr = document.getElementById("emailErr");
+              var moblieErr = document.getElementById("moblieErr");
+
+              var name = document.getElementsByName("personName")[0].value;
+              var email = document.getElementsByName("personEmail")[0].value;
+              var moblie = document.getElementsByName("personPhone")[0].value;
+
+             // alert(name + email + moblie);
+              var namePattern = /^[a-zA-Z]+$/;
+              var emailPattern = /^[a-zA-Z0-9\.\_\-]+@[a-zA-Z0-9\.\_\-]+\.[a-z\.]{2,5}$/;
+              var mobliePattern = /^\d{10}$/
+
+              var validate = false;
+
+              if (name=="")
+              {
+                e.preventDefault();
+                nameErr.innerHTML = "Please enter full name";
+              }
+
+              if (email=="")
+              {
+                e.preventDefault();
+                emailErr.innerHTML = "Please enter email";
+              }
+
+              else if(emailPattern.test(email)==false)
+              {
+                e.preventDefault();
+                emailErr.innerHTML = "Please enter valid email";
+              }
+          
+              if (moblie=="")
+              {
+                e.preventDefault();
+                moblieErr.innerHTML = "Please enter modile number";
+              }
+
+              else if(mobliePattern.test(moblie)==false)
+              {
+                e.preventDefault();
+                moblieErr.innerHTML = "Please enter valid modile number";
+
+              }
+              else validate = true;
+
+              if (validate){
+
+              //data to be sent to server
+              post_data = $("#contactUs").serialize();
+              //Ajax post data to server
+                  $.post('/QNP/contactUs.php', post_data, function(response){  
+                      if(response == "1")
+                          {
+                               $("#response").text("Thank you for contacting us. We shall get in touch with you soon.");
+                               //$("#sendContact").attr({'data-toggle':'modal', 'data-target':'#myModal'});
+                               $("#myModal").attr("class","modal fade in");
+                               $("body").attr("class","modal-open");
+                               $(".modal-open .modal").css("display", "block");
+
+                           $(".contact-msg").show();
+                           setTimeout(reloadPage,1000);
+                          }
+                      else
+                      {
+                              $("#response").text("Error Occured.Please try after some time.");
+                              console.log(response);
+                              $(".contact-msg").show();
+                          setTimeout(reloadPage,1000);
+                      }
+                      });}
+                  //else alert("Error Occured.Please try after some time. //"manik.biradar9@gmail.com,";");
+              };
+
+      </script>   
+  </head>
+
+  <body>
+<!-- Top ================================================ -->
+
+<section id="top">
+  <div class="topbar">
+        <nav class="navbar navbar-default" >
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="logo" href="http://www.beyondcorporation.com/"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li> <a href="#top" class="active">Home</a> </li>
+                <li> <a href="#aboutus">About Us</a> </li>
+                <li> <a href="#ourteam">Team</a> </li>
+                <li> <a href="#ourvalues">Values</a> </li>
+                <li> <a href="#ourservices">Services</a> </li>
+                <li> <a href="#contactus">Contact Us</a> </li>                  
+              </ul>
+            </div>
+          </div>
+        </nav>
+  </div> <!--topbar-->
+
+    <div class="banner">
+      <div class="slider-wrap">
+        <div class="slider">
+          <img src="images/landacquisition.jpg" align="middle">
+          <img src="images/construction.jpg" align="middle">
+          <img src="images/hospitality.jpg" align="middle">
+          <img src="images/digital.jpg" align="middle">
+          <img src="images/farming.jpg" align="middle">
+          
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Service List
+================================================ -->
+
+<section>
+  <div class="serv-list">
+    <div class="container">
+      <ul>
+        <li class="land">          
+          <a href="#ourservices">
+            <i class="fa fa-th-large"></i>
+            <p> LAND ACQUISITION </p>
+          </a>
+        </li>
+        <li class="const">
+          <a href="#ourservices">
+            <i class="fa fa-home"></i>
+            <p> CONSTRUCTION </p>
+          </a>
+        </li>
+        <li class="hospi">
+          <a href="#ourservices">
+            <i class="fa fa-cutlery"></i>
+            <p> HOSPITALITY </p>
+          </a>
+        </li>
+        <li  class="digi">
+          <a href="#ourservices">
+            <i class="fa fa-desktop"></i>
+            <p> DIGITAL MEDIA </p>
+          </a>
+        </li>
+        <li  class="agri">
+          <a href="#ourservices">
+            <i class="fa fa-leaf"></i>
+            <p> AGRICULTURE </p>
+          </a>
+        </li>        
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- About Us
+================================================ -->
+
+<section id="aboutus">
+  <div class="about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="heading">
+            <h1> About Us </h1>
+            <p>We are beyond and far reaching in our approach in creating spaces that you call ‘Home’. We believe in a collaborative growth by investing time, attention and all our resources to conceptualize the right design and environment for you. We aspire to capture the essence and spirit of your unique taste and lifestyle and then create the designs that you love, with attention to every fine detail. The soul of our work lies in meeting your high expectations and impeccable taste by providing modern and contemporary solutions. We endeavour to add value through our quality and service. Our reputation for innovation, quality and trust precedes us. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="our-vision">
+              <h1> Our Shared Vision & Mission </h1>
+              <p> A home is an ‘Experience’ and our vision is to create an exclusive experience in the realm of Residential, Commercial and Hospitality spaces for every person who connects with "Beyond". We work with an indelible mission towards it by providing support, addressing issues... </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="our-values">
+              <h1> Our Values </h1>
+              <p> Our core value is to remain committed to excellence and ethical business practices with transparency. We command mutual respect of our clients by conforming to our pioneering expertise and never compromising on the accountability of our promises. for us Commitment and quality comes first! </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="our-points">
+              <h1> Stakeholders Benefit </h1>
+              <ul>
+                <li> <span style="font-size: 20px; color: #f8821e; font-weight: bold; text-shadow: 0px 0px 2px black;">B</span>&nbsp;ased on trust and commitment </li>
+                <li> <span style="font-size: 20px; color: #ffcd00; font-weight: bold; text-shadow: 0px 0px 2px black;">E</span>&nbsp;thical practices </li>
+                <li> <span style="font-size: 20px; color: #f8821e; font-weight: bold; text-shadow: 0px 0px 2px black;">Y</span>&nbsp;ears of trusted experience </li>
+                <li> <span style="font-size: 20px; color: #00aeef; font-weight: bold; text-shadow: 0px 0px 2px black;">O</span>&nbsp;utstanding service </li>
+                <li> <span style="font-size: 20px; color: #0072bc; font-weight: bold; text-shadow: 0px 0px 2px black;">N</span>&nbsp;ew techniques & innovative technology </li>
+                <li> <span style="font-size: 20px; color: #21186e; font-weight: bold; text-shadow: 0px 0px 2px black;">D</span>&nbsp;esigned for you </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Team
+================================================ -->
+
+<section id="ourteam">
+  <div class="our-team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="heading">
+            <h1> Our Team </h1>
+            <p> Our team is the backbone of our company and contributes to its growth & 
+            success whole heartedly. Each member of this growing family is an expert, dedicated to serving every client selflessly. The vision and the mission of the company is lived by every one of us as ‘mine’ and hence called a ‘Shared Vision’. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="team-member">
+            <div class="f-row tabContainer">
+              <ul>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Parag Mate</h3>
+                      <p>Founder & Promoter</p>
+                    </div>
+                    <div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>
+                    <div class="read-more">
+                      <a href="#tab1"> read more </a>
+                    </div>
+                  </div>
+                  <img src="images/ParagMate.jpg">          
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Ketan Sowani</h3>
+                      <p>Co-Founder & Promoter</p>
+                    </div>
+                    <div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>
+                    <div class="read-more">
+                      <a href="#tab2"> read more </a>
+                    </div>
+                  </div>
+                  <img src="images/KetanSowani.jpg">
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Javed Ahmed <br> Sayed</h3>
+                      <p>Chief Mentor</p>
+                    </div>
+                    <div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>
+                    <div class="read-more">
+                      <a href="#tab3"> read more </a>
+                    </div>
+                  </div>
+                  <img src="images/JavedAhmedSayed.jpg">
+                </li>
+              </ul>
+            </div> <!--f-row-->
+
+            <div class="f-row dataContainer"><!--dataContainer-->
+                  <div id="tab1" class="tabcontents"><!--tab1-->
+                      <div class="close"> <i class="fa fa-close"></i> </div>
+                      <p>Mr. Parag Mate is a successful entrepreneur with more than 2 decades of experience in Real Estate, Construction, Education and Hospitality businesses. He believes that growth is to “Think Beyond” and thus founded the “Beyond Group” with the unique idea of “Growing Together”, through collaborations, Resource Optimization, Brand Building, Investing in Relationships and sharing the rewards of success. Apart from exhibiting inspiring innovativeness and entrepreneurial skills, he also is committed to corporate social responsibility through various NGOs and organizations that promote social and development causes. He also focuses on youth development, by empowering them.</p>
+                    </div><!--tab1-->
+                    <div id="tab2" class="tabcontents"><!--tab2-->
+                      <div class="close"> <i class="fa fa-close"></i> </div>
+                        <p>Mr. Ketan Sowani having in-depth experience and knowledge in “Real Estate Sector” including fair knowledge of Finance, he is majorly responsible for structuring and setting up stringent systems in the company. He manages overall working of the organization and is instrumental in strategic decision making. His planning and management skills have given the organization financial stability and strength to grow.</p>
+                    </div><!--tab2-->
+                     <div id="tab3" class="tabcontents"><!--tab3-->
+                      <div class="close"> <i class="fa fa-close"></i> </div>
+                        <p>A well-wisher and a valuable advisor of Beyond Corporation since its inception, Mr Sayed has played a pioneering and pivotal role in the company. Having completed his schooling and higher education in Pune, his familiarity of the city and rich networking enables him to support the company in land acquisitions, collaborations and liaising. His professional accolades include a prestigious post of Assistant Commissioner of Income Tax from where he retired after a successful innings of serving IT department for 45 years. He is a precious and approachable entity in the company for everyone to look up to for advice owing to his rich experiences, in life and work alike!</p>
+                    </div><!--tab3-->
+                </div><!--dataContainer-->
+
+
+            <div class="s-row tabContainer">
+              <ul>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Suleman <br> Budhwani</h3>
+                      <p>Advisor</p>
+                    </div>
+                    <div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>
+                    <div class="read-more">
+                      <a href="#tab4"> read more </a>
+                    </div>
+                  </div>
+                  <img src="images/SulemanBudhwani.jpg">                  
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Anay Shirgaokar</h3>
+                      <p>Director</p>
+                    </div>
+                    <div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>
+                    <div class="read-more">
+                      <a href="#tab5"> read more </a>
+                    </div>
+                  </div>
+                  <img src="images/AnayShirgaokar.jpg">
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Rashmi Singh Ahad</h3>
+                      <p>Marketing Strategist</p>
+                    </div>
+                    <div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>
+                    <div class="read-more">
+                      <a href="#tab6"> read more </a>
+                    </div>
+                  </div>
+                  <img src="images/RashmiSinghAhad.jpg">
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Rupesh Agrawal</h3>
+                      <p>Analyst</p>
+                    </div>
+                    <div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>
+                    <div class="read-more">
+                      <a href="#tab7"> read more </a>
+                    </div>
+                  </div>
+                  <img src="images/RupeshAgrawal.jpg">
+                </li>                
+              </ul>
+            </div> <!--s-row-->
+
+            <div class="s-row dataContainer"><!--dataContainer-->
+                  <div id="tab4" class="tabcontents"><!--tab1-->
+                      <div class="close"> <i class="fa fa-close"></i> </div>
+                      <p>A hardcore business development professional with more than 23 years experience in diverse industries. He has been in the real estate sector of managing redevelopment projects and marketing for more than 17 years. A soft spoken individual with excellent negotiating skills make him add extra value to all projects that he works on. Previously, he has worked as Vice President (Business Development) with Shapoorji Palloonji Ltd. and SD Corporation Pvt. Ltd. He has to his credit marketing of 1 million sq. ft. valuing half a billion dollars and involved in project acquisition of 30 million sq. ft.</p>
+                    </div><!--tab4-->
+                    <div id="tab5" class="tabcontents"><!--tab2-->
+                      <div class="close"> <i class="fa fa-close"></i> </div>
+                        <p>An engineer by education, Mr. Shirgaokar plays a vital role in being the link in all operations, which makes him an irrefutable asset in every project he is involved in. He has worked on various Re-development and SRA projects as a Consultant. Besides having a background in Real-Estate based services, he has worked in the realm of Education, Transportation too. He is the channel of Beyond, through which strategy, planning and execution flows seamlessly.</p>
+                    </div><!--tab5-->
+                     <div id="tab6" class="tabcontents"><!--tab3-->
+                      <div class="close"> <i class="fa fa-close"></i> </div>
+                        <p>A dynamic personality, with an enviable experience in Marketing, Operations and Human Resources, Rashmi is heading the Marketing division at Beyond Corporation presently. She has worked in a myriad of industries like airlines, hospitality, animation and construction, to name a few. Her PR skills make her a very successful professional in any branding and marketing endeavor she embarks upon.  Having worked for over 23 years, she is an asset to any organization she works with.</p>
+                    </div><!--tab6-->
+                    <div id="tab7" class="tabcontents"><!--tab3-->
+                      <div class="close"> <i class="fa fa-close"></i> </div>
+                        <p>A lawyer by education and with a background in the Liquor industry, Mr. Rupesh is a person, who loves to meet new people and travel far and wide. He has valuable experience in the realm of Real Estate with prestigious clients and has a core competency in Sales & Marketing. His pleasant demeanor and gift of the gab earns him the reputation of an endearing personality amidst his colleagues and associates.</p>
+                    </div><!--tab7-->
+                </div><!--dataContainer-->
+
+            <div class="t-row tab-container">
+              <ul>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>J. V. Bhere</h3>
+                      <p>Regional Head Nasik</p>
+                    </div>
+                    <!--<div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>-->
+                  </div>
+                  <img src="images/J.V.jpg">
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Advt. Patil</h3>
+                      <p>Legal Head</p>
+                    </div>
+                    <!--<div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>-->
+                  </div>
+                  <img src="images/Advt.jpg">
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>H. G. H. Mani</h3>
+                      <p>Accounts Head</p>
+                    </div>
+                    <!--<div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>-->
+                  </div>
+                  <img src="images/H.G.H.jpg">
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Vikas Kulkarni</h3>
+                      <p>Administration Head</p>
+                    </div>
+                    <!--<div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>-->
+                  </div>
+                  <img src="images/VilasKulkarni.jpg">
+                </li>
+                <li>
+                  <div class="team-hover">
+                    <div class="name">
+                      <h3>Ranjit Desai</h3>
+                      <p>Regional Manager Goa</p>
+                    </div>
+                    <!--<div class="team-social-logo">
+                      <a href="#" class="facebook"> <i class="fa fa-facebook-square"> </i> </a>
+                      <a href="#" class="twitter"> <i class="fa fa-linkedin-square"> </i> </a>
+                    </div>-->
+                  </div>
+                  <img src="images/RanjeetDesai.jpg">
+                </li>
+              </ul>
+            </div> <!--s-row-->
+
+          </div> <!--team-member-->
+        </div> <!--col-->
+      </div> <!--row-->
+
+      <div class="supportTeam">
+        <a href="pages/support_team.html"> See Our Support Team </a>
+      </div>
+
+    </div> <!--Container-->
+  </div>
+</section>
+
+<!-- Our Values
+================================================ -->
+
+<section id="ourvalues">
+  <div class="our-values">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="heading">
+            <h1> Our Values </h1>
+            <p> Foundation of Trust The strength of any building depends on how strong the foundations are. With every client we have a stronghold at the root of the relationship called ‘Trust’. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ourvalues-info">
+      <div class="container">
+        <div>
+          <img src="images/Values_list3.png" class="img-responsive">
+        </div>
+    </div> <!--ourvalues-info-->
+  </div>
+</section>
+
+<!-- Our Service
+================================================ -->
+
+<section id="ourservices">
+  <div class="our-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="heading">
+            <h1> Our Services </h1>
+            <p> As a reputed company, Beyond Corporation India Pvt. Ltd. (BCIPL) has land holdings that helps retain the confidence of its stakeholders for future expansion and escalation. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ourservices-info">
+      <div class="container">
+        <ul>
+          <li>
+            <div class="service landacquisition">
+              <div class="hvr-float-shadow">
+                <a href="pages/land.html"> <i class="fa fa-th-large"> </i> </a>
+              </div>
+              <h1>Land Acquisition</h1>
+              <div class="service-info">                
+                <p> As a reputed company, Beyond Corporation India Pvt. Ltd. (BCIPL) has land holdings that helps retain the confidence of its stakeholders for future expansion and escalation. </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="service construction">
+              <div class="hvr-float-shadow">
+                <a href="pages/construction.html"> <i class="fa fa-home"> </i> </a>
+              </div>
+              <h1>Construction</h1>
+              <div class="service-info">                
+                <p> We relentlessly aspire to create spaces called homes for every person to connect to. At heart, the primary objective of every project remains to provide an affordable home with the best amenities and provisions, using modern technology and keeping abreast with the needs of your ever evolving lifestyles. </p>
+                <img src="images/saksham-logo.png" alt="Saksham">
+                <img src="images/con-logo.png" alt="">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="service hospitality">
+              <div class="hvr-float-shadow">
+                <a href="http://www.casagrandestudios.com/" target="_blank"> <i class="fa fa-cutlery"> </i> </a>
+              </div>
+              <h1>Hospitality</h1>
+              <div class="service-info">                
+                <p> Casa Grande Studios The understated luxury of our Studios doesn’t compromise on the comfort and luxury that every guest looks for in a home away from home. The convenient location and impeccable services offer great value and caters to all your corporate and personal needs. </p>
+                <img src="images/Casa-Grande-Studies.png">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="service digital">
+              <div class="hvr-float-shadow">
+                <a href="pages/digital.html"> <i class="fa fa-desktop"> </i> </a>
+              </div>
+              <h1>Digital Media</h1>
+              <div class="service-info">                
+                <p> Social networking is the flavor of our times and while we connect to the world through various applications, we dont know our neighborhood! Even though our contacts and loved ones are residing in the same city, there is a distance and traffic that separates us! The need of the hour is to save time in commuting and search for services and information at the click of a button. </p>
+                <img src="images/We.png">                
+                <img src="images/Land-acquisition1.png">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="service agriculture">
+              <div class="hvr-float-shadow"> 
+                <a href="pages/agriculture.html"> <i class="fa fa-leaf"> </i> </a>
+              </div>
+              <h1>Agriculture</h1>
+              <div class="service-info">                
+                <p> Coming Soon... </p>
+                <img src="images/saksham-kisan.png">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="service csr">
+              <div class="hvr-float-shadow"> 
+                <a href="pages/csr.html"> <i class="fa fa-users"> </i> </a>
+              </div>
+              <h1>CSR</h1>
+              <div class="service-info">                
+                <p> Corporate Social Responsibility (CSR) of an organisation to make an impact on society at large by its decisions and activities. Beyond Corporation India Pvt. Ltd. (BCIPL) has invested in local communities to add value and make a significant and lasting impact. It is said that ‘strong communities support strong organizations’; we believe that the reverse is also true. Through our responsible and transparent approach, we aspire to build a sustainable future for all! </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div> <!--container-->
+    </div> <!--ourservices-info-->
+  </div> <!--Our Service-->
+</section>
+
+
+<!-- Contact Us
+================================================ -->
+
+<section id="contactus">
+  <div class="contact-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="heading">
+            <h1> Contact Us </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="address">
+            <address>
+              <h3> Corporate office </h3>
+              <p> Survey No. 81/1, Plot No. 2, <br> 
+              1st Floor, Vithal Vista Building,  <br> 
+              Rutuja Park Society, <br> 
+              Near Orchid School, <br> 
+              Baner Road, Baner, <br> 
+              Pune. Maharashtra 411045, India. <br> 
+              <b> Telephone No.: </b> 020 66870800 </p>
+
+              <h3> Registered office </h3>
+              <p> Amrut Kumbh Apts., B-5,  <br> 
+              2nd Floor, Laxmi Park Colony, <br> 
+              Bhide Hospital Lane, <br> 
+              Opp. Hostel Sargam, <br> 
+              Navi Peth, Pune. Maharashtra 411030, India. <br> 
+              <b> Telephone No.: </b> 020 65002108 </p>
+            </address>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="form">
+            <form method="post" role="form" id="contactUs">
+              <p> <input type="text" name="personName" placeholder="Full Name"> </p>
+              <div id="nameErr" class="err"></div>
+
+              <p> <input type="text" name="personEmail" placeholder="Email"> </p>
+              <div id="emailErr" class="err"></div>
+
+              <p> <input type="text" name="personPhone" maxlength="10" placeholder="Mobile"> </p>
+              <div id="moblieErr" class="err"></div>
+
+              <textarea type="text" name="personMessage" placeholder="Message"></textarea>
+
+              <button type="button" id="sendContact" onclick="sendMail(event)"> Send </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-backdrop fade in" style="z-index: -1;" ></div>
+                <div class="modal-dialog">
+                  
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Message</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Thank you for contacting us. We shall get in touch with you soon.</p>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.2418867754513!2d73.78068739999999!3d18.5631305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bece7a2a5497%3A0xdd30c5a58b8e822!2sBeyond+Corporation+India+Pvt.+Ltd.!5e0!3m2!1sen!2sin!4v1459370720088" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div> <!--container-->
+  </div> <!--contact-us-->
+</section>
+
+<section>
+
+  <div class="sub-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <img src="images/mccia.png" class="mccia">
+          <img src="images/gibc.png" class="gibc">         
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <img src="images/ISO-9001-logo.jpg">
+          <p>ISO 9001-2008 accredited company by American International Accreditation Organization Inc and Bureau of Registrars (AIAO-BAR), Los Gatos, California</p>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="f-social">
+            <h3>Connect with us</h3>
+            <ul>
+              <li> <a href="#" class="facebook"> <i class="fa fa-facebook-square"></i> </a> </li>
+              <li> <a href="#" class="twitter"> <i class="fa fa-twitter-square"></i> </a> </li>
+              <li> <a href="#" class="instagram"> <i class="fa fa-instagram"></i> </a> </li>
+              <li> <a href="#" class="linkedin"> <i class="fa fa-linkedin-square"></i> </a> </li>
+              <li> <a href="#" class="youtube"> <i class="fa fa-youtube-square"></i> </a> </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>    
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p class="copy-right">© 2015 All Rights Reserved.</p>
+      <p class="design-by">Website Designed & Developed by <a href="#"> Options Graphic. </a> </p>
+    </div>    
+  </div>
+</section>
+
+    <div class="gotop"> <a href="#top"></a> </div>
+
+  </div>
+    
+
+    
+
+    <script type="text/javascript">
+        
+        $('.slider').tilesSlider({
+
+        x: 4,
+        y: 12,
+        random: true,
+        effect: 'default',
+        auto: true,
+        timer: false,
+        loop: true,
+        thumbs: false,
+
+        });
+    </script> 
+     </body>
+  
+</html>

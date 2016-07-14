@@ -1,0 +1,1723 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Roboto', Sn-Serif;
+	background-color: #efefef;
+	padding-bottom: 0px;
+}
+
+ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.clearFix{
+	clear: both;
+}
+
+/*========Nav========*/
+
+.topbar{
+	position: fixed;
+	width: 100%;
+	z-index: 9;
+}
+
+.logo{
+  width: 378px;
+  height: 59px;
+  position: relative;
+  margin: 10px;
+  display: block;
+  background: url(../images/Beyond-Corporation-Logo2.jpg) no-repeat;
+}
+
+.navbar{
+  border: 0px solid transparent;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px black;
+  z-index: 7;
+}
+
+.navbar-default {
+    background-color: white;
+}
+
+.navbar-collapse {
+    border-top: 0px solid transparent;
+    box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.1) inset;
+}
+
+.navbar-default .navbar-nav{
+    float: right;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #009ee3;
+    font-family: Roboto;
+    font-size: 18px;
+    transition: all .3s;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: white;
+    background-color: #009ee3;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 30px 10px;
+}
+
+/*========Banner========*/
+
+.banner{
+	position: relative;
+	width: 100%;
+	height: 500px;
+	z-index: 7;
+	overflow: hidden;
+}
+
+/*========Service List========*/
+
+.serv-list{
+	position: relative;
+	text-align: center;
+	margin-top: -105px;
+	z-index: 8;
+}
+
+.serv-list:after{
+	background: url(../images/serv-list-shadow.png) no-repeat;
+}
+
+.serv-list li{
+	display: inline-block;
+	width: 170px;
+	height: 170px;
+	vertical-align: middle;
+	margin-left: -5px;
+	cursor: pointer;
+}
+
+.serv-list .land{
+	position: relative;
+	transform: skewY(-10deg);
+	background: green; 
+}
+
+.serv-list .land:hover i{
+	color: green;
+	background: white;
+	border-radius: 100%;
+}
+
+.serv-list .const{
+	position: relative;
+	transform: skewY(10deg);
+	background: #442076; 
+}
+
+.serv-list .const:hover i{
+	color: #442076;
+	background: white;
+	border-radius: 100%;
+}
+
+.serv-list .hospi{
+	position: relative;
+	transform: skewY(-10deg);
+	background: #009ee3 ; 
+}
+
+.serv-list .hospi:hover i{
+	color: #009ee3;
+	background: white;
+	border-radius: 100%;
+}
+
+.serv-list .digi{
+	position: relative;
+	transform: skewY(10deg);
+	background: #ef7c00; 
+}
+
+.serv-list .digi:hover i{
+	color: #ef7c00;
+	background: white;
+	border-radius: 100%;
+}
+
+.serv-list .agri{
+	position: relative;
+	transform: skewY(-10deg);
+	background: #ffcc00; 
+}
+
+.serv-list .agri:hover i{
+	color: #ffcc00;
+	background: white;
+	border-radius: 100%;
+}
+
+.serv-list li i{
+	font-size: 45px;
+	color: white;
+	margin: 13px 30px 12px;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	line-height: 100px;
+	transition: all .3s;
+}
+
+.serv-list li p{
+	font-size: 16px;
+	color: white;
+	display: block;
+}
+
+.serv-list li a{
+	text-decoration: none;
+	display: inline-block;
+}
+
+
+/*========Go to Top========*/
+
+#aboutus{
+	padding: 80px 0px 0px;
+}
+
+.about-us .heading{
+	text-align: center;
+}
+
+.about-us .heading h1{
+	font-size: 34px;
+	vertical-align: top;
+}
+
+.about-us .heading h1:before{
+	content: url(../images/heading-deco-left.png);
+	top: -7px;
+	position: relative;
+}
+
+.about-us .heading h1:after{
+	content: url(../images/heading-deco-right.png);
+	top: -7px;
+	position: relative;
+}
+
+.about-us .heading p{
+	font-size: 18px;
+	width: 95%;
+	margin: auto;
+	margin-top: 20px;
+	text-align: justify;
+}
+
+.about-us .about-info {
+	background: #a8a8a8;
+	margin-top: 30px;
+	padding: 30px 0px 40px
+}
+
+.about-us .about-info .our-vision{
+	width: 90%;
+	margin: auto;
+}
+
+.about-us .about-info .our-values{
+	width: 90%;
+	margin: auto;
+}
+
+.about-us .about-info .our-points {
+	width: 90%;
+	margin: auto;
+}
+
+.about-us .about-info p{
+	font-size: 16px;
+	text-align: justify;
+}
+
+.about-us .about-info h1{
+	font-size: 24px;
+	color: white;
+	text-align: center;
+}
+
+.about-us .about-info .our-points li{
+	font-size: 16px;
+	list-style: circle;
+	margin-left: 20px;
+}
+
+
+/*========Our Team========*/
+
+#ourteam{
+	padding: 80px 0px 0px;
+}
+
+.our-team .heading{
+	text-align: center;
+}
+
+.our-team .heading h1{
+	font-size: 34px;
+}
+
+.our-team .heading h1:before{
+	content: url(../images/heading-deco-left.png);
+	top: -7px;
+	position: relative;
+}
+
+.our-team .heading h1:after{
+	content: url(../images/heading-deco-right.png);
+	top: -7px;
+	position: relative;
+}
+
+.our-team .heading p{
+	font-size: 18px;
+	width: 95%;
+	margin: auto;
+	margin-top: 20px;
+	color: #6c6c6c;
+	text-align: justify;
+}
+
+.our-team .team-member .f-row {
+	text-align: center;
+}
+
+.our-team .team-member .f-row li{
+	position: relative;
+	display: inline-block;
+	margin: 25px;
+	width: 177px;
+	height: 178px;
+	overflow: hidden;
+}
+
+.our-team .team-member .team-hover {
+	position: absolute;
+	background-color: rgba(0, 0, 0, .5);
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all .3s;
+}
+
+.our-team .team-member li:hover .team-hover {
+	opacity: 1;
+}
+
+.our-team .team-member .team-hover .name{
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: -20px;
+	opacity: 0;
+	transition: all .3s;
+}
+
+.our-team .team-member li:hover .name{
+	opacity: 1;
+	top: 15px;
+
+}
+
+.our-team .team-member .team-hover .name h3{
+	font-size: 18px;
+	color: white;
+	padding: 0px 0px 5px;
+	margin: 0px;
+}
+
+.our-team .team-member .team-hover .name p{
+	color: white;
+}
+
+.our-team .team-member .s-row li:nth-child(odd) .team-hover .team-social-logo{
+	top: 45%;
+}
+
+.our-team .team-member .team-hover .team-social-logo{
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 40%;
+}
+
+.our-team .team-member .team-hover .team-social-logo .facebook{
+	position: absolute;
+	left: -30%;
+	opacity: 0;
+}
+
+.our-team .team-member li:hover .team-hover .team-social-logo .facebook{
+	left: 30%;
+	opacity: 1;
+}
+
+.our-team .team-member .team-hover .team-social-logo .twitter{
+	position: absolute;
+	right: -30%;
+	opacity: 1;
+}
+
+.our-team .team-member li:hover .team-hover .team-social-logo .twitter{
+	right: 30%;
+	opacity: 1;
+}
+
+.our-team .team-member .team-hover .team-social-logo a{
+	color: white;
+	font-size: 26px;
+	margin: 5px;
+	text-decoration: none;
+	transition: all .3s;
+}
+
+.our-team .team-member .team-hover .team-social-logo .facebook:hover{
+	color: #1245a3; 
+}
+
+.our-team .team-member .team-hover .team-social-logo .twitter:hover{
+	color: #00ace5; 
+}
+
+.our-team .team-member .team-hover .read-more {
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: -40%;
+	transition: all .3s;
+}
+
+.our-team .team-member li:hover .team-hover .read-more {
+	bottom: 10%	;
+}
+
+.our-team .team-member .team-hover .read-more a{
+	color: white;
+	font-size: 16px;
+	padding: 3px 20px;
+	background: #ef7c00;
+	margin-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+	transition: all .3s;
+}
+
+.our-team .team-member .team-hover .read-more a:hover{
+	color: #ef7c00;
+	background: white;
+}
+
+.our-team .tabContainer .active{
+	border: 2px solid #ef7c00;
+}
+
+.our-team .f-row .tabcontents{
+	position: relative;
+	width: 75%;
+	color: white;
+	background: #ef7c00;
+	margin: auto;
+	text-align: left;
+}
+
+.our-team .close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0px 1px 0px #FFF;
+    opacity: 0.2;
+    padding: 5px;
+}
+
+.our-team .tabcontents p{
+	padding: 30px;
+	font-size: 16px;
+	text-align: justify;
+}
+
+.our-team .team-member .s-row {
+	text-align: center;
+}
+
+.our-team .team-member .s-row li{
+	position: relative;
+	display: inline-block;
+	margin: 30px 10px;
+	width: 155px;
+	height: 155px;
+	overflow: hidden;
+}
+
+.our-team .team-member .s-row .tabcontents{
+	position: relative;
+	width: 90%;
+	color: white;
+	background: #ef7c00;
+	margin: auto;
+	text-align: left;
+}
+
+.our-team .team-member .t-row {
+	text-align: center;
+}
+
+.our-team .team-member .t-row li{
+	position: relative;
+	display: inline-block;
+	margin: 10px;
+	width: 120px;
+	height: 120px;
+	overflow: hidden;
+}
+
+.our-team .supportTeam{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.our-team .supportTeam a{
+	display: inline-block;
+	padding: 10px 50px;
+	font-size: 16px;
+	color: black;
+	border: 1px solid #ef7c00;
+	border-radius: 10px;
+	text-decoration: none;
+	transition: all .3s; 
+}
+
+.our-team .supportTeam a:hover{
+	color: white;
+	background: #ef7c00;
+}
+
+/*========Our Values========*/
+
+#ourvalues{
+	padding: 80px 0px 0px;
+}
+
+.our-values{
+	position: relative;
+	width: 100%;
+}
+
+.our-values .heading {
+	text-align: center;
+}
+
+.our-values .heading h1{
+	font-size: 34px;
+}
+
+.our-values .heading h1:before{
+	content: url(../images/heading-deco-left.png);
+	top: -7px;
+	position: relative;
+}
+
+.our-values .heading h1:after{
+	content: url(../images/heading-deco-right.png);
+	top: -7px;
+	position: relative;
+}
+
+.our-values .heading p{
+	font-size: 18px;
+	width: 95%;
+	margin: auto;
+	margin-top: 20px;
+	color: #6c6c6c;
+	text-align: justify;
+}
+
+.our-values .ourvalues-info{
+	text-align: left;
+	margin-top: 40px;	
+}
+
+.our-values .ourvalues-info img{
+	margin-bottom: 20px;
+	margin: auto;
+}
+
+/*========Over Serives========*/
+
+#ourservices{
+	padding: 80px 0px 0px;
+}
+
+.our-services{
+	position: relative;
+	width: 100%;
+}
+
+.our-services .heading {
+	text-align: center;
+}
+
+.our-services .heading h1{
+	font-size: 34px;
+}
+
+.our-services .heading h1:before{
+	content: url(../images/heading-deco-left.png);
+	top: -7px;
+	position: relative;
+}
+
+.our-services .heading h1:after{
+	content: url(../images/heading-deco-right.png);
+	top: -7px;
+	position: relative;
+}
+
+.our-services .heading p{
+	font-size: 18px;
+	width: 95%;
+	margin: auto;
+	margin-top: 20px;
+	color: #6c6c6c;
+	text-align: justify;
+}
+
+.our-services li{
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	margin: 20px 5px;
+}
+
+.our-services .ourservices-info{
+	text-align: center;
+	margin-top: 40px;
+}
+
+.our-services .ourservices-info .service{
+	width: 90%;
+	margin: auto;
+}
+
+.our-services .ourservices-info .service .service-info{
+	display: none;
+}
+
+.our-services .ourservices-info i{
+	width: 70px;
+	height: 70px;
+	color: #ef7c00;
+	border: 2px solid #ef7c00;
+	border-radius: 100%;
+	font-size: 30px;
+	text-align: center;
+	line-height: 2.2;
+	transition: all .3s;
+}
+
+.our-services .ourservices-info .service .active{
+	color: white;
+	background-color: #ef7c00;
+}
+
+
+.our-services .ourservices-info h1{
+	color: black;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.our-services .ourservices-info p{
+	color: #6c6c6c;
+	font-size: 14px;
+	text-align: justify;
+}
+
+.our-services .ourservices-info img{
+	margin-top: 20px;
+}
+
+.our-services .ourservices-info .construction img{
+	margin: 20px 10px 5px 10px;
+}
+
+.our-services .ourservices-info .digital img{
+	float: left;
+	margin: 20px 30px 5px 30px;
+}
+
+.our-services .ourservices-info .agriculture p{
+	text-align: center;
+}
+
+/*========Over Serives========*/
+
+#contactus{
+	padding: 80px 0px 0px;
+}
+
+.contact-us{
+	position: relative;
+}
+
+.contact-us .heading h1{
+	font-size: 34px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.contact-us .heading h1:before{
+	content: url(../images/heading-deco-left.png);
+	top: -7px;
+	position: relative;
+}
+
+.contact-us .heading h1:after{
+	content: url(../images/heading-deco-right.png);
+	top: -7px;
+	position: relative;
+}
+
+.contact-us .address h3{
+	font-size: 22px;
+}
+
+.contact-us .address p{
+	font-size: 16px;
+	color: #6c6c6c;
+}
+
+.contact-us .form{
+	margin-top: 40px;
+}
+
+.contact-us .form p{
+	margin: 0px;
+}
+
+.contact-us .form input{
+	font-size: 16px;
+	margin-bottom: 5px;
+	padding: 5px;
+	width: 70%;
+	border: none;
+	border-bottom: 2px solid gray;
+	transition: all .3s;
+}
+
+.contact-us .form .err{
+	margin-bottom: 15px;
+	color: red;
+}
+
+.contact-us .form input:focus{
+	border-bottom: 2px solid #009ee3;
+}
+
+.contact-us .form textarea{
+	font-size: 16px;
+	width: 70%;	
+	height: 130px;
+	border: none;
+	border-bottom: 2px solid gray;
+}
+
+.contact-us .form textarea:hover{
+	border-bottom: 2px solid #009ee3;
+}
+
+.contact-us .form button{
+	font-size: 16px;
+	margin-top: 10px;
+	width: 70%;
+	border: none;
+	color: white;
+	padding: 10px;
+	background-color: #009ee3;
+}
+
+.contact-us .map {
+	width: 100%;
+	padding: 40px 0px;
+}
+
+
+/*========Footer========*/
+
+.sub-footer {
+	background: #d2d2d2;
+	padding: 40px 0px;
+}
+
+.sub-footer img{
+	margin: 10px;
+	float: left;
+}
+
+.sub-footer p{
+	color: #3e3e3e;
+
+}
+
+.sub-footer h3{
+	font-size: 20px;
+	color: #3e3e3e;
+	margin: 0px;
+}
+
+.sub-footer .f-social{
+	margin-left: 20px;
+}
+
+.sub-footer .mccia{
+	margin-top: 25px;
+}
+
+.sub-footer li{
+	display: inline-block;
+	margin: 5px;
+}
+
+.sub-footer li a{
+	color: #3e3e3e;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+.sub-footer li .facebook:hover{
+	color: #236dc0;
+}
+
+.sub-footer li .twitter:hover{
+	color: #00a8ff;
+}
+
+.sub-footer li .instagram:hover{
+	color: #2473a5;
+}
+
+.sub-footer li .linkedin:hover{
+	color: #2473a5;
+}
+
+.sub-footer li .youtube:hover{
+	color: #cb2d2d;
+}
+
+
+.footer {
+	background: #2a2a2a;
+	text-align: center;
+}
+
+.footer p{
+	font-size: 14px;
+	color: white;	
+	padding: 25px 0px;
+}
+
+.footer .copy-right{
+	float: left;
+}
+
+.footer .design-by{
+	float: right;
+}
+
+.footer .design-by a{
+	color: #e67925;
+}
+
+
+
+/*========Go to Top========*/
+
+.gotop{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	box-shadow: 0px 0px 5px black;
+}
+
+.gotop a{
+	font-family: 'fontAwesome';
+	font-size: 30px;
+	padding: 5px 20px;
+	background: #ef7c00;
+	color: white;
+	display: block;
+	text-decoration: none;
+}
+
+/*========Land Aquisition========*/
+
+land .topBG{
+	position: relative;
+	width: 100%;
+	height: 450px;
+	background: url(../images/landacquisition.jpg) no-repeat;
+	background-size: cover;
+}
+
+land .topBG h3{
+	font-size: 25px;
+	color: white;
+	margin: 0;
+	padding: 100px 50px 30px 50px;
+	font-weight: 300;
+	background: green;
+	display: inline-block;
+	float: left;
+	margin-left: 100px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+
+land .top-info{
+	position: relative;
+	width: 100%;
+	margin-top: 50px;
+}
+
+land .top-info .top-inner{
+	padding: 0px 50px;	
+}
+
+land .top-info .top-inner p{
+	font-size: 18px;	
+}
+
+land .top-info .top-inner li{
+	font-size: 18px;
+	list-style: disc;
+	margin-left: 20px;	
+}
+
+land .divder{
+	position: relative;
+	width: 100%;
+	height: 2px;
+	background: #d4d4d4;
+	margin-top: 50px;
+}
+
+land .bottom-info{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+
+land .bottom-info > ul > li{
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+land .bottom-info .left-info{
+	text-align: left;
+}
+
+land .bottom-info .left-info p{
+	font-size: 18px;
+}
+
+land .bottom-info .left-info li{
+	list-style: disc;
+	font-size: 18px;
+	margin-left: 15px;
+}
+
+land .landGallery{
+	padding: 50px 0px;
+}
+
+land .landGallery .slider-wrap{
+	position: relative;
+	width: 500px;
+	height: 334px;
+	overflow: hidden;
+	margin: auto;
+}
+
+land .landGallery .tiles-nav{
+	top: 280px;
+}
+
+land .landGallery .tiles-next{
+	display: none;
+}
+
+land .landGallery .tiles-prev{
+	display: none;
+}
+
+/*--top links--*/
+
+.topBG {
+	width: 100%;
+	overflow: hidden;
+}
+
+.topBG .links{
+	float: right;
+	margin-top: 115px;
+}
+
+.topBG .links .outer{
+	position: relative;
+	right: -200px;
+	transition: all .5s;
+}
+
+.topBG .links li:hover .outer{
+	right: 0px;
+}
+
+.topBG .links li:hover .text{
+	margin-left: -20px;
+	opacity: 1;
+}
+
+.topBG .links .outer li{
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.topBG .links .icon{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	margin-right: 10px; 
+	z-index: 1;
+}
+
+.topBG .links i{
+	font-size: 24px;
+	color: white;
+	line-height: 50px;
+}
+
+.topBG .links .text{
+	font-size: 18px;
+	color: white;
+	padding: 8px 10px 8px 30px;
+	background-color: white;
+	width: 200px;
+	opacity: 0;
+	transition: all .5s;
+}
+
+.topBG .links .text a{
+	color: white;
+}
+
+.topBG .links .la {
+	background-color: #008000;
+	transform: skewX(-10deg);
+}
+
+.topBG .links .la-text{
+	background-color: #008000;
+}
+
+.topBG .links .con {
+	background-color: #442076;
+	transform: skewX(10deg);
+}
+
+.topBG .links .con-text{
+	background-color: #442076;
+}
+
+.topBG .links .hosp {
+	background-color: #009ee3;
+	transform: skewX(-10deg);
+}
+
+.topBG .links .hosp-text{
+	background-color: #009ee3;
+}
+
+.topBG .links .digi {
+	background-color: #ef7c00;
+	transform: skewX(10deg);
+}
+
+.topBG .links .digi-text{
+	background-color: #ef7c00;
+}
+
+.topBG .links .agri {
+	background-color: #ffcc00;
+	transform: skewX(-10deg);
+}
+
+.topBG .links .agri-text{
+	background-color: #ffcc00;
+}
+
+.topBG .links .csr {
+	background-color: gray;
+	transform: skewX(10deg);
+}
+
+.topBG .links .csr-text{
+	background-color: gray;
+}
+
+land .topBG .links .active{
+	right: 0px;
+}
+
+land .topBG .links .active .text{
+	margin-left: -20px;
+	opacity: 1;
+}
+
+construction .topBG .links .active{
+	right: 0px;
+}
+
+construction .topBG .links .active .text{
+	margin-left: -20px;
+	opacity: 1;
+}
+
+digital .topBG .links .active{
+	right: 0px;
+}
+
+digital .topBG .links .active .text{
+	margin-left: -20px;
+	opacity: 1;
+}
+
+agri .topBG .links .active{
+	right: 0px;
+}
+
+agri .topBG .links .active .text{
+	margin-left: -20px;
+	opacity: 1;
+}
+
+csr .topBG .links .active{
+	right: 0px;
+}
+
+csr .topBG .links .active .text{
+	margin-left: -20px;
+	opacity: 1;
+}
+
+/*========Construction========*/
+
+construction .topBG{
+	position: relative;
+	width: 100%;
+	height: 450px;
+	background: url(../images/construction.jpg) no-repeat;
+	background-size: cover;
+}
+
+construction .topBG h3{
+	font-size: 25px;
+	color: white;
+	margin: 0;
+	padding: 100px 50px 30px 50px;
+	font-weight: 300;
+	background: #442076;
+	display: inline-block;
+	float: left;
+	margin-left: 100px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+/*========REAL ESTATE DIVISION========*/
+
+construction .real-estate-division{
+	padding: 50px 0px;
+}
+
+construction .real-estate-division .info{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+construction .real-estate-division .info > ul > li{
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+construction .real-estate-division .info .imgs{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	background: url(../images/real-estate-division.jpg) no-repeat center center;
+	background-size: cover;
+
+}
+
+construction .real-estate-division .info .right-info{
+	text-align: left;
+	padding-left: 50px;
+}
+
+construction .real-estate-division .info .right-info li{
+	font-size: 18px;
+	list-style: disc;
+}
+
+
+
+/*========COMPLETED RESIDENTIAL SCHEME GOA========*/
+
+construction .completed-scheme-goa{
+	background: #442076;
+	padding: 50px 0px;
+	color: white;
+}
+
+construction .completed-scheme-goa .info{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+construction .completed-scheme-goa .info > ul > li {
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 18px;
+	list-style: disc;
+}
+
+construction .completed-scheme-goa .info .left-info li {
+	font-size: 18px;
+	list-style: disc;
+}
+
+construction .completed-scheme-goa .info .left-info {
+	text-align: left;
+}
+
+construction .completed-scheme-goa .imgs{
+	position: relative;
+	width: 100%;
+	height: 270px;
+	overflow: hidden;
+	background: url(../images/Goa_Marvela.jpg) no-repeat center center;
+	background-size: cover;
+	margin-left: 70px;
+}
+
+construction .completed-scheme-goa h3{
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+/*========ONGOING PROJECTS PUNE========*/
+
+construction .ongoing-pro-pune{	
+	padding: 50px 0px;
+}
+
+construction .ongoing-pro-pune .info{	
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+construction .ongoing-pro-pune .info > ul > li{	
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+construction .ongoing-pro-pune .imgs{
+	position: relative;
+	width: 100%;
+	height: 270px;
+	overflow: hidden;
+	background: url(../images/ongoing-pro.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+construction .ongoing-pro-pune .right-info {
+	text-align: left;
+	padding-left: 50px;
+}
+
+construction .ongoing-pro-pune .right-info h3{
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+construction .ongoing-pro-pune .info .right-info p{
+	font-size: 18px;
+}
+
+construction .ongoing-pro-pune .info .right-info li{	
+	font-size: 18px;
+	list-style: disc;
+}
+
+construction .ongoing-pro-pune a{
+	color: #eb6b00;
+	text-decoration: none;
+	margin-top: 20px;
+	display: inline-block;
+	transition: all .3s;
+}
+
+construction .ongoing-pro-pune a:hover{
+	color: white;
+}
+
+/*========UPCOMING PROJECTS========*/
+
+construction .breker {
+	position: relative;
+	width: 100%;
+	height: 2px;
+	background-color: #d6d6d6;
+}
+
+construction .upcoming-pro {
+	position: relative;
+	width: 100%;
+	padding: 50px 0px;
+}
+
+construction .upcoming-pro h1{
+	font-size: 25px;
+	text-align: center;
+}
+
+construction .upcoming-pro .upcoming-pro-info{
+	text-align: center;
+}
+
+construction .upcoming-pro .upcoming-pro-info > ul > li{
+	position: relative;
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px 30px;
+}
+
+construction .upcoming-pro .upcoming-pro-info > ul > li h2{
+	text-align: left;
+	font-size: 20px;
+	padding: 10px;
+	background: #eb6b00;
+	color: white;
+	text-align: center;
+}
+
+construction .upcoming-pro .upcoming-pro-info > ul > li h3{
+	text-align: left;
+	font-size: 20px;
+}
+
+construction .upcoming-pro .upcoming-pro-info > ul > li p{
+	text-align: left;
+	font-size: 16px;
+}
+
+construction .upcoming-pro .upcoming-pro-info > ul > li > ul > li{
+	list-style: disc;
+	text-align: left;
+	font-size: 16px;
+	margin-left: 15px; 
+}
+
+
+
+/*========Digital========*/
+
+digital .topBG{
+	position: relative;
+	width: 100%;
+	height: 450px;
+	background: url(../images/digital.jpg) no-repeat;
+	background-size: cover;
+}
+
+digital .topBG h3{
+	font-size: 25px;
+	color: white;
+	margin: 0;
+	padding: 100px 50px 30px 50px;
+	font-weight: 300;
+	background: #ef7c00;
+	display: inline-block;
+	float: left;
+	margin-left: 100px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+digital .saksham {
+	margin: 50px 0px;
+}
+
+digital .saksham .info{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+digital .saksham .info li{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+digital .saksham .info li:first-child{
+	width: 60%;
+}
+
+digital .saksham .info li:last-child{
+	width: 30%;
+}
+
+digital .saksham .info .right-info{
+	text-align: left;
+}
+
+digital .saksham .info .right-info img{
+	padding: 10px 0px 30px 10px;
+}
+
+digital .saksham .info .right-info p{
+	text-align: justify;
+	font-size: 18px;
+}
+
+
+digital .land {
+	margin: 50px 0px;
+	background: #d6d6d6;
+	padding: 50px 0px;
+}
+
+digital .land .info{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+digital .land .info li{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+digital .land .info li:first-child{
+	width: 60%;
+}
+
+digital .land .info li:last-child{
+	width: 30%;
+}
+
+digital .land .info .right-info{
+	text-align: left;
+}
+
+digital .land .info .right-info img{
+	padding: 10px 0px 30px 10px;
+}
+
+digital .land .info .right-info p{
+	text-align: justify;
+	font-size: 18px;
+}
+
+
+
+
+/*========Agriculture========*/
+
+agri .topBG{
+	position: relative;
+	width: 100%;
+	height: 450px;
+	background: url(../images/farming.jpg) no-repeat;
+	background-size: cover;
+}
+
+agri .agri-page-info{
+	text-align: center;
+}
+
+agri img{
+	padding: 150px 0px;
+}
+
+agri h1{
+	font-size: 24px;
+	padding: 0px 0px 100px 0px;
+}
+
+
+/*========Support Team========*/
+
+
+support .group-photo{
+	padding: 100px 0px;
+	text-align: center;
+}
+
+support .group-photo .slider-wrap{
+	position: relative;
+	height: 481px;
+	width: 900px;
+	overflow: hidden;
+	margin: auto;
+}
+
+support .group-photo .tiles-nav{
+	top: 370px;
+}
+
+support .group-photo .tiles-prev{
+	left: 0px;
+}
+
+support .options-design {
+	background-color: #d9d9d9;
+	padding: 100px 0px;
+}
+
+support .options-design h1 {
+	font-size: 40px;
+	font-weight: 300;
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+support .options-design .info {
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+support .options-design .info li{
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+support .options-design .info .right-info{
+	font-size: 18px;
+	text-align: justify;
+}
+
+support .corp-designer {
+	padding: 100px 0px;
+}
+
+support .corp-designer h1 {
+	font-size: 40px;
+	font-weight: 300;
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+support .corp-designer .info {
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+support .corp-designer .info li{
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+support .corp-designer .info .left-info{
+	font-size: 18px;
+	text-align: justify;
+}
+
+support .bims {
+	position: relative;
+	background-color: #d9d9d9;
+	padding: 100px 0px;
+}
+
+support .bims h1 {
+	font-size: 40px;
+	font-weight: 300;
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+support .bims .info{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+support .bims .info li{
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+support .bims .info .right-info p{
+	text-align: justify;
+	font-size: 18px;
+}
+
+support .content-writer {
+	padding: 100px 0px;
+}
+
+support .content-writer h1 {
+	font-size: 40px;
+	font-weight: 300;
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+support .content-writer .info{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+support .content-writer .info li{
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+
+support .content-writer .info .left-info{
+	font-size: 18px;
+	text-align: justify;
+}
+
+support .content-writer .info .right-info h6{
+	font-size: 30px;
+	text-align: center;
+}
+
+
+/*========Support Team========*/
+
+csr .topBG{
+	position: relative;
+	width: 100%;
+	height: 450px;
+	background: url(../images/csr-topBG.jpg) no-repeat;
+	background-size: cover;
+}
+
+csr .topBG h3{
+	font-size: 25px;
+	color: white;
+	margin: 0;
+	padding: 100px 50px 30px 50px;
+	font-weight: 300;
+	background: #442076;
+	display: inline-block;
+	float: left;
+	margin-left: 100px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+csr .csr-info{	
+	 margin-top: 100px;
+	 margin-bottom: 200px;
+}
+
+csr .csr-info h4{	
+	text-align: left;
+	font-size: 30px;
+	font-weight: 300;
+	padding:70px 0px 0px 0px; 
+}
+
+csr .csr-info p{	
+	font-size: 18px;
+}
+
+csr .csr-info li{	
+	list-style: disc;
+	font-size: 18px;
+	margin-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1280px){
+
+	.serv-list li{
+		width: 195px;
+		height: 195px;
+	}
+
+	.serv-list li i{
+		font-size: 50px;
+	}
+
+	.serv-list li p{
+		font-size: 18px;8
+	}
+
+}

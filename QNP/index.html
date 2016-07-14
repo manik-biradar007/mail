@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<form id="contactUs" method = "post" role="form">
+           <div class="row">
+             <div class="col-lg-6 col-sm-6">
+              <div class="form-group">
+                <label for="" id="name">Name*</label><label class="error" id="nameLabel"></label>
+                <input type="text" class="form-control textOnly" id="fromName" name="personName" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" id="company">Company</label>
+                <input type="text" class="form-control" id="fromCompany" name="companyName" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" id="email">Email*</label><label class="error" id="emailLabel"></label>
+                <input type="email" class="form-control email" id="fromEmail" name="personEmail" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" id="phone">Phone*</label><label class="error" id="phoneLabel"></label>
+                <input type="text" class="form-control onlyNumbers" id="fromPhone" name="personPhone" placeholder="">
+              </div>
+ 		
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                  <label id="message">Message*</label><label class="error" id="messageLabel"></label>
+                  <textarea class="form-control requiredField" rows="8" id="fromMessage"  name="personMessage"></textarea>
+                  </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label  id="message">Enter Code*</label>
+                  <label class="error" id="captchaLabel"></label>
+                 </div>
+                  <div class="row">
+                    <div class="col-lg-4 col-sm-5"> <div id="txtCaptcha" class="txtCaptcha" onCopy="return false"></div></div>
+                    <div class="col-lg-8 col-sm-7">
+                    <input type="text" name="vercode"  class="form-control requiredField txtInput" id="captchaText" onPaste="return false"/> 
+                    </div>
+                  </div>
+                   
+                    <button type="button" class="btn btn-success btn-block" id="sendContact">Send</button>
+              </div>
+           </div>
+          </form>
+          <div class="contact-msg" style="display:none;">
+			 <label id="response">Mail sent successfully.</label>
+			</div>
+	</div>
+</body>
+<script  src="js/jquery-2.0.0.min.js" ></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	function reloadPage()
+	{
+	    $(".contact-msg").hide();window.location.href="/";
+	}
+	// scroll function
+	function scrollToID(id, speed){
+		var offSet = 50;
+		var targetOffset = $(id).offset().top - offSet;
+		var mainNav = $('#main-nav');
+		$('html,body').animate({scrollTop:targetOffset}, speed);
+		if (mainNav.hasClass("open")) {
+			mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+			mainNav.removeClass("open");
+		}
+	}
+var captcha = Math.ceil(Math.random() * 1000000);
+$(".txtCaptcha").html(captcha);
+
+	// navigation click actions	
+	$('.scroll-link').click(function(event){
+		event.preventDefault();
+		var sectionID = $(this).attr("data-id");
+		scrollToID('#' + sectionID, 750);
+	});
+	// scroll to top action
+	$('.scroll-top').click( function(event) {
+		event.preventDefault();
+		$('html, body').animate({scrollTop:0}, 'slow'); 		
+	});
+	// mobile nav toggle
+	$('#nav-toggle').click( function (event) {
+		event.preventDefault();
+		$('#main-nav').toggleClass("open");
+	});
+	//email verification.	
+	var emailError = false;		
+	$(".textOnly").keypress(function(event){
+	       var inputValue = event.which;
+	       //if digits or not a space then don't let keypress work.
+	       if((inputValue > 47 && inputValue < 58) && (inputValue != 32)){
+		   event.preventDefault();
+	       }
+	   });
+	$(".onlyNumbers").keydown(function(event) {
+		var num = event.keyCode;
+	        if ((num > 95 && num < 106) || (num > 36 && num < 41) || num == 9 || num == 190) {
+	            return;
+	        }
+	        if (event.shiftKey || event.ctrlKey || event.altKey) {
+	            event.preventDefault();
+	        } else if (num != 46 && num != 8) {
+	            if (isNaN(parseInt(String.fromCharCode(event.which)))) {
+	                event.preventDefault();
+	            }
+	        }
+	  });
+	/* $(".email").blur(function() {
+		validateEmail();
+	}); */
+	function validateEmail() {
+		var a = $(".email").val();
+		var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+.[a-z]{2,4}$/;
+		if (filter.test(a)) {
+			$("#emailLabel").text("");
+			emailError = false;
+			$("#secondaryEmail").css({'border-color' : '','border-style' : ''});
+			return true;
+		} else {
+			//$("#emailLabel").text("Please enter valid email adderss");
+			emailError=true;
+			return false;
+		}
+	}
+	$('#sendContact').click(function(event){
+
+		var proceed = true;
+		$(".error").text("");	
+		if ($("#fromName").val() == "") {
+			$("#nameLabel").text("Required field");
+			proceed = false;
+			
+		 }
+		 if($("#fromEmail").val() == ""){
+			$("#emailLabel").text("Required field");
+			proceed = false;
+		  }
+		 if ($("#fromPhone").val() == "") {
+			$("#phoneLabel").text("Required field");
+			proceed = false;
+			}
+		 if($("#fromMessage").val() == ""){
+			$("#messageLabel").text("Required field");
+			proceed = false;
+		  }
+		if($("#captchaText").val() == ""){
+			$("#captchaLabel").text("Required field");
+			proceed = false;
+		  }
+		 if(!validateEmail()){
+			$("#emailLabel").text("Please enter valid email adderss");
+			proceed = false;
+		  }
+		 //validateEmail();
+		 ValidCaptcha();
+		function ValidCaptcha(){
+			var str1 = $("#txtCaptcha").text();
+			var str2 = $("#captchaText").val();
+			if (str1 != str2) {
+				$("#captchaLabel").text("Enter valid captcha");        
+				proceed = false;
+			}
+			//else proceed = true;
+		    }
+
+		    // Remove the spaces from the entered and generated code
+		    function removeSpaces(string)
+		    {
+			return string.split(' ').join('');
+		    }
+		if(proceed) {
+		    $("#sendContact").css("pointer-events","none");
+		    $("body").css("cursor","wait");
+		    //data to be sent to server
+		    post_data = $("#contactUs").serialize();
+		    //Ajax post data to server
+            $.post('/QNP/contactUs.php', post_data, function(response){  
+                if(response == "1")
+                    {
+                         $("#response").text("Thank you for contacting us. We shall get in touch with you soon.");
+                     $(".contact-msg").show();
+                     setTimeout(reloadPage,3000);
+                    }
+                else{
+                        $("#response").text("Error Occured.Please try after some time.");
+                        console.log(response);
+                        $(".contact-msg").show();
+                    setTimeout(reloadPage,3000);
+                }
+                });
+		}		
+	});//end email sending validation.	
+	
+});
+</script>
+</html>
